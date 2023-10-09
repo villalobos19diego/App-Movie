@@ -1,8 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:proyecto_cine/config/constants/environment.dart';
+import 'package:proyecto_cine/domain/datasources/movies_datasource.dart';
 import 'package:proyecto_cine/domain/entities/movie.dart';
+import 'package:proyecto_cine/infraestructure/mappers/movie_mapper.dart';
+import 'package:proyecto_cine/infraestructure/models/moviedb/moviedb_response.dart';
 
-class MovieDbDataSource extends MovieDataSource {
+class MovieDbDataSource extends MoviesDataSource {
   final dio = Dio(BaseOptions(
     baseUrl: 'https://api.themoviedb.org/3/movie/550?api_key=13561f6415a1bbf48f431513a3bfc4fd',
     queryParameters: {
@@ -42,4 +45,6 @@ class MovieDbDataSource extends MovieDataSource {
     });
     return _jsonToMovies(response.data);
   }
+
+
 }

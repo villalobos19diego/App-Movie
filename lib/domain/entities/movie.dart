@@ -18,6 +18,6 @@ class Movie {
 
 
 
-    r
+    r, required String originalLanguage, required String posterPath, required bool video
    });
 }
