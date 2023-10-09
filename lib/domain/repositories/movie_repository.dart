@@ -1,6 +1,6 @@
-import 'package:proyecto_cine/config/domain/entities/movie.dart';
+import 'package:proyecto_cine/domain/entities/movie.dart';
 
-abstract class MoviesDataSource {
+abstract class MoviesRepository {
   
   
   
