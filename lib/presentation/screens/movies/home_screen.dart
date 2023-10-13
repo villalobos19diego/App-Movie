@@ -44,7 +44,7 @@ class _HomeViewState extends ConsumerState<_HomeView> {
   @override
   void initState() {
     super.initState();
-
+//estado inicial de los objetos
     ref.read( nowPlayingMoviesProvider.notifier ).loadNextPage();
     ref.read( popularMoviesProvider.notifier ).loadNextPage();
     ref.read( topRatedMoviesProvider.notifier ).loadNextPage();

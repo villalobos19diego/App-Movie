@@ -1,5 +1,6 @@
 import 'movie_moviedb.dart';
-
+// aca convertimos la forma de mostratrar la informacion
+//aca el json se convirtio en lenguaje darrt
 
 class MovieDbResponse {
     MovieDbResponse({
