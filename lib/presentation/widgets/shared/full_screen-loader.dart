@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+// ignore: file_names
+import 'package:flutter/material.dart' show BuildContext, Center, CircularProgressIndicator, Column, MainAxisAlignment, SizedBox, StatelessWidget, StreamBuilder, Text, Widget;
 
 class FullScreenLoader extends StatelessWidget {
   const FullScreenLoader({super.key});

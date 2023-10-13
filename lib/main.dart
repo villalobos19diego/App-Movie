@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-
+import 'package:proyecto_cine/config/router/app_router.dart';
+import 'package:proyecto_cine/config/theme/app_theme.dart';
 Future<void> main() async{
   await dotenv.load(fileName:'.env');
 
@@ -15,9 +15,9 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-     // routerConfig: appRouter,
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-    //  theme:  AppTheme().getTheme(),
+  theme: APPTheme().getTheme(),
     );
   }
 }

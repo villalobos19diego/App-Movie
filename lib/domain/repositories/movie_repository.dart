@@ -2,6 +2,8 @@ import 'package:proyecto_cine/domain/entities/movie.dart';
 
 abstract class MoviesRepository {
   
+  //son identicas solo lo que cambia es el nombre
+  //esta clase nos sirve para hacer  una parte de la informacion con las categorigas las cuales me puede servir  y cambiar sin afectar
   
   
   

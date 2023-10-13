@@ -1,3 +1,7 @@
+//esta clase es la que da las vida a movies_datasource las cuales le da las propiedades
+
+//las cuales dependende y seran todas requeridas y todas deben de ser usadas la cual pasa a ser un tabla
+
 class Movie {
   final bool adult;
   final String backdropPath;

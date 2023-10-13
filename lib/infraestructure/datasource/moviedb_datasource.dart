@@ -6,6 +6,10 @@ import 'package:proyecto_cine/infraestructure/mappers/movie_mapper.dart';
 import 'package:proyecto_cine/infraestructure/models/moviedb/moviedb_response.dart';
 
 class MovieDbDataSource extends MoviesDataSource {
+  //declaro un variable las cual tendra la clase
+  //esta clase define la ruta de la api final dio y tambien podemos cambiar el idioma 
+  //
+
   final dio = Dio(BaseOptions(
     baseUrl: 'https://api.themoviedb.org/3',
     queryParameters: {
@@ -23,6 +27,16 @@ class MovieDbDataSource extends MoviesDataSource {
         .toList();
     return movies;
   }
+
+
+        //get ase el request//
+
+//primero se defininen para despues implementarlos y los mandamoa llamar //
+//en el metodo scrin las cuales manda a llamr todas las peliculas que estan en cartelera//
+//las cual devuelve un json con la estructura//
+//los cuales se definen los get en un archivo llamado repositorio los cuales deben devolverse en un Json
+
+
 
   @override
   Future<List<Movie>> getNowPlaying({int page = 1}) async {
