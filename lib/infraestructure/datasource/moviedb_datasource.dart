@@ -7,7 +7,7 @@ import 'package:proyecto_cine/infraestructure/models/moviedb/moviedb_response.da
 
 class MovieDbDataSource extends MoviesDataSource {
   //declaro un variable las cual tendra la clase
-  //esta clase define la ruta de la api final dio y tambien podemos cambiar el idioma 
+  //esta clase define la ruta de la api final dio y tambien podemos cambiar el idioma
   //
 
   final dio = Dio(BaseOptions(
@@ -28,15 +28,12 @@ class MovieDbDataSource extends MoviesDataSource {
     return movies;
   }
 
-
-        //get ase el request//
+  //get ase el request//
 
 //primero se defininen para despues implementarlos y los mandamoa llamar //
 //en el metodo scrin las cuales manda a llamr todas las peliculas que estan en cartelera//
 //las cual devuelve un json con la estructura//
 //los cuales se definen los get en un archivo llamado repositorio los cuales deben devolverse en un Json
-
-
 
   @override
   Future<List<Movie>> getNowPlaying({int page = 1}) async {
@@ -67,5 +64,17 @@ class MovieDbDataSource extends MoviesDataSource {
     final response =
         await dio.get('/movie/upcoming', queryParameters: {' page': page});
     return _jsonToMovies(response.data);
+  }
+
+  @override
+  Future<Movie> getMovieById(String id) async {
+    final response = await dio.get('movie/$id');
+    if (response.statusCode != 200) {
+      throw Exception('movie with id: $id not found');
+    }
+
+    final movieDetails = MovieDetails.fromJson(response.data);
+    final Movie movie = MovieMapper.movieDetailsToEntity(movieDetails);
+    return movie;
   }
 }
